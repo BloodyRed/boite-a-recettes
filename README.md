@@ -19,5 +19,5 @@ sont stockées dans le navigateur (IndexedDB) de l'appareil qui l'utilise.
 
 ## Mettre à jour
 
-Remplace `index.html` dans le dépôt. Si l'ancienne version reste affichée, change `livre-recettes-v1`
-en `v2` dans `sw.js` (ou ferme et rouvre l'app deux fois).
+Remplace `index.html` **et** `sw.js` dans le dépôt : le nom du cache dans `sw.js` change à chaque version,
+ce qui force le navigateur à charger la nouvelle version (sinon ferme et rouvre l'app deux fois).
