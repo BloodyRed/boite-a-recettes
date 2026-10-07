@@ -1,7 +1,21 @@
 # Mon livre de recettes
 
-Application web autonome (aucun serveur, aucune dépendance à installer). Les recettes et les photos
-sont stockées dans le navigateur (IndexedDB) de l'appareil qui l'utilise.
+Application web autonome (aucun serveur à gérer). Les recettes et les photos sont stockées dans le
+navigateur de l'appareil, et, si la synchronisation est activée, dans un dépôt GitHub **privé** qui
+vous appartient, pour les retrouver sur l'ordinateur et le téléphone.
+
+## Synchronisation entre appareils (v2.0)
+
+1. Sur github.com, créez un dépôt **privé** vide, par exemple `boite-a-recettes-donnees`.
+2. Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token :
+   expiration « No expiration » (ou la plus longue), accès limité à ce dépôt, permission
+   *Contents : Read and write*.
+3. Dans l'app : Réglages → Synchronisation → compte, dépôt, jeton → « Connecter et envoyer mes recettes ».
+   Répétez l'étape 3 sur chaque appareil (le jeton reste dans le navigateur, il n'est jamais mis en ligne).
+
+Chaque modification est envoyée automatiquement ; l'app récupère les nouveautés à l'ouverture, au retour
+en avant-plan et toutes les cinq minutes. Hors ligne, les changements attendent la reconnexion.
+Si deux appareils modifient la même recette hors ligne, la dernière version envoyée gagne.
 
 ## Héberger sur GitHub Pages
 
